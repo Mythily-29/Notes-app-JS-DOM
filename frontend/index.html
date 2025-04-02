@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="div">
+        <div id="main"><button><i class="fa-solid fa-plus"></i></button></div>
+        <h2>Notes App</h2>
+        <div class="container">
+            <section id="section">
+                <label for="">Title</label>
+                <input type="text" id="input">
+                <label for="">description</label>
+                <input type="text" id="desc">
+                <button id="submit">submit</button>
+            </section>
+        </div>
+        <div class="add">
+            <section class="onebyone"></section>
+        </div>
+    </div>
+    <script src="sample.js"></script>
+    <script>
+        $('#section').hide()
+        $('#main').click(function(){
+            $('#section').show()
+        })
+    </script>
+</body>
+</html>
