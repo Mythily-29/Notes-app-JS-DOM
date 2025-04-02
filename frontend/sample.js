@@ -9,7 +9,8 @@ function getting() {
            $.each(response,function(e,i){
                append(i.title,i.name,i.id)
            })
-       }
+       },
+       error:function(error){console.log(error)}
     })}getting()
 
 $('#submit').click(function () {
@@ -40,7 +41,8 @@ $('#submit').click(function () {
         },
         success:function(){
           getting()
-        }
+        },
+        error:function(error){console.log(error)}
     })
 })
 
@@ -68,7 +70,8 @@ $.ajax({
     type:'DELETE',
     success:function(){
         getting()
-      }
+      },
+      error:function(error){console.log(error)}
 })
 })
 
