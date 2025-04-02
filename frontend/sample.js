@@ -48,7 +48,7 @@ function append(a,b,c){
         val.append(`<div class="subdiv"><label for="">Name</label>
             <span>${a}</span>
             <label for="">Title</label>
-             <span>${b}</span><span>${new Date}</span><button id=${c} class="edit">Edit</button>
+             <span>${b}</span><span>${new Date().toLocaleDateString()}</span><button id=${c} class="edit">Edit</button>
             <button class="delete" id=${c}>Delete</button></div>`)
 }
 
