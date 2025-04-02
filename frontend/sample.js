@@ -46,9 +46,9 @@ $('#submit').click(function () {
 
 function append(a,b,c){
         val.append(`<div class="subdiv"><label for="">Name</label>
-            <input type="text" value=${a}>
+            <span>${a}</span>
             <label for="">Title</label>
-            <input type="text" value=${b}><span>${new Date}</span><button id=${c} class="edit">Edit</button>
+             <span>${b}</span><span>${new Date}</span><button id=${c} class="edit">Edit</button>
             <button class="delete" id=${c}>Delete</button></div>`)
 }
 

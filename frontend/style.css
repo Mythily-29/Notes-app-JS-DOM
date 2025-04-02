@@ -1,168 +1,184 @@
-/* General Styles with Animations and Dark Mode */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+/* Premium Notes App Styling */
+:root {
+    --primary: #7F5AF0;
+    --primary-dark: #6C4BD1;
+    --secondary: #2CB67D;
+    --error: #ff7b79;
+    --background: #F9F9F9;
+    --surface: #FFFFFF;
+    --text-primary: #16161A;
+    --text-secondary: #5F6C7B;
+    --border: rgba(0,0,0,0.08);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    --radius: 12px;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: rgb(151, 149, 146);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Main Container */
+  .div {
+    width: 100%;
+    max-width: 800px;
+    background: var(--text-secondary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 2.5rem;
+    position: relative;
     overflow: hidden;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.div {
-    width: 90%;
-    max-width: 1200px;
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Header */
+  h2 {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     text-align: center;
-    transition: background 0.3s ease-in-out;
-}
-
-h2 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-#main {
-    width: 100%;
-    height: 60px;
-    background-color: #6200ea;
+  }
+  
+  /* Floating Action Button */
+  #main {
+    width: 64px;
+    height: 64px;
+    background: var(--primary);
     color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s;
-}
-
-#main:hover {
-    background-color: #3700b3;
-}
-
-.container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#section {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-    background: #bb86fc;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    width: 300px;
-    transition: transform 0.3s ease-in-out;
-}
-
-#section.show {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-label {
-    font-weight: bold;
-    text-align: left;
-    color: #ffffff;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    background: #333;
-    color: #fff;
-    transition: background 0.3s;
-}
-
-input:focus {
-    background: #444;
-}
-
-button {
-    padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    box-shadow: 0 4px 16px rgba(127, 90, 240, 0.3);
+    transition: all 0.3s ease;
+    margin: 0 auto 2rem;
+  }
+  
+  #main:hover {
+    transform: translateY(-3px);
+    background: var(--primary-dark);
+    box-shadow: 0 6px 20px rgba(127, 90, 240, 0.4);
+  }
+  
+  /* Modal */
+  #section {
+    display: none;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    width: 90%;
+    max-width: 480px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+  
+  label {
+    display: block;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
     font-size: 1rem;
-    transition: background 0.3s;
-}
-
-#submit {
-    background: #03dac6;
-    color: black;
-}
-
-#submit:hover {
-    background: #018786;
-}
-
-.add {
-    margin-top: 20px;
-}
-
-.onebyone {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.onebyone section {
-    background: #1e1e1e;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    transition: transform 0.3s;
-}
-
-.onebyone section:hover {
-    transform: scale(1.05);
-}
-
-.onebyone button {
-    margin-top: 5px;
-    padding: 8px;
-    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.1);
+  }
+  
+  /* Notes Grid */
+  .onebyone {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .subdiv {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s ease;
+  }
+  
+  .subdiv:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .subdiv label {
+    color: var(--primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+  
+  .subdiv span {
+    display: block;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .subdiv span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 1rem 0 0;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
     cursor: pointer;
-}
-
-.onebyone button:nth-child(1) {
-    background: #03dac6;
-    color: black;
-}
-
-.onebyone button:nth-child(1):hover {
-    background: #018786;
-}
-
-.onebyone button:nth-child(2) {
-    background: #cf6679;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  #submit {
+    background: var(--primary);
     color: white;
-}
-
-.onebyone button:nth-child(2):hover {
-    background: #b00020;
-}
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  #submit:hover {
+    background: var(--primary-dark);
+  }
+  
+  .edit {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .delete {
+    background: var(--error);
+    color: white;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
