@@ -18,9 +18,7 @@ $('#submit').click(function () {
         alert('Field is empty'); return
     }
     if($('#submit').text()=='edit'){
-        $.get(link, function(response) {
-        let find=response.find(x=>x.id==editid)
-        if(find){
+        $.get(`${link}/${editid}`,function(response){
             $.ajax({
                 url:`${link}/${editid}`,
                 type:'PUT',
@@ -29,9 +27,9 @@ $('#submit').click(function () {
                     name:$('#desc').val()
                 }
             })
-        }
-        $('#submit').text('submit');editid;
-    });return}
+        })
+        $('#submit').text('submit');editid;return
+    }
     $.ajax({
         url:link,
         type:'POST',
