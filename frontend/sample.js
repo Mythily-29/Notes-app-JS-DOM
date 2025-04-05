@@ -18,7 +18,7 @@ $('#submit').click(function () {
         alert('Field is empty'); return
     }
     if($('#submit').text()=='edit'){
-        $.get(`${link}/${editid}`,function(response){
+        $.get(`${link}/${editid}`,function(){
             $.ajax({
                 url:`${link}/${editid}`,
                 type:'PUT',
@@ -53,14 +53,11 @@ function append(a,b,c){
 }
 
 val.on('click','.edit',function(event){
-    $.get(link, function(response) {
-            $.map(response,function(i,e){
-                if(event.target.id==i.id){
-                    editid=i.id;$('#submit').text('edit')
-                    $('#section').show();$('#input').val(i.title);$('#desc').val(i.name)
-                }
-            })
-        });
+    $.get(`${link}/${event.target.id}`,function(response){
+        editid=event.target.id;$('#submit').text('edit');
+        $('#section').show();
+        $('#input').val(response.title);$('#desc').val(response.name)
+    })
 })
 val.on('click','.delete',function(event){
 $.ajax({
